@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AnthonyApp</string>
+    <string name="Homepage">home</string>
+    <string name="Devices">Devices</string>
+    <string name="LiveTV">LiveTV</string>
+
+    <string name="Settings">Settings</string>
+</resources>
