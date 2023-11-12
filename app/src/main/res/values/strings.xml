@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">AnthonyApp</string>
-    <string name="Homepage">home</string>
-    <string name="Devices">Devices</string>
-    <string name="LiveTV">LiveTV</string>
-
-    <string name="Settings">Settings</string>
+    <string name="Homepage">主页</string>
+    <string name="LiveTV">现场</string>
+    <string name="Calendar">日程</string>
+    <string name="Profile">我的</string>
 </resources>

@@ -5,6 +5,6 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 
 @Composable
-fun Settings(navController: NavHostController) {
+fun Profile(navController: NavHostController) {
     Text(text="Settings页暂无内容")
 }

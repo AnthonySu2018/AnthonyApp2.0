@@ -3,31 +3,29 @@ package com.sioux.anthony.androidapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.CalendarMonth
+import androidx.compose.material.icons.filled.CalendarToday
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -45,8 +43,8 @@ class MainActivity : ComponentActivity() {
                 val items = listOf(
                     Screen.Homepage,
                     Screen.LiveTV,
-                    Screen.Devices,
-                    Screen.Settings,
+                    Screen.Calendar,
+                    Screen.Profile,
                 )
 
                 Scaffold(
@@ -62,8 +60,8 @@ class MainActivity : ComponentActivity() {
                                         Icon(when(it){
                                             Screen.Homepage -> Icons.Filled.Home
                                             Screen.LiveTV   -> Icons.Filled.PlayArrow
-                                            Screen.Devices  -> Icons.Filled.Build
-                                            Screen.Settings -> Icons.Filled.Settings
+                                            Screen.Calendar  -> Icons.Filled.CalendarMonth
+                                            Screen.Profile -> Icons.Filled.AccountCircle
                                             else -> Icons.Filled.Favorite
                                         },
 
@@ -94,8 +92,8 @@ class MainActivity : ComponentActivity() {
                     NavHost(navController, startDestination = Screen.Homepage.route, Modifier.padding(innerPadding)) {
                         composable(Screen.Homepage.route) {  Homepage(navController) }
                         composable(Screen.LiveTV.route) { LiveTV(navController) }
-                        composable(Screen.Devices.route) {  Devices(navController) }
-                        composable(Screen.Settings.route) { Settings(navController) }
+                        composable(Screen.Calendar.route) {  Calendar(navController) }
+                        composable(Screen.Profile.route) { Profile(navController) }
 
                     }
                 }
