@@ -1,10 +1,10 @@
-package com.sioux.anthony.androidapp
+package com.sioux.anthony.androidapp.profile
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 
 @Composable
-fun Calendar(navController: NavHostController) {
-    Text(text="Calendar页暂无内容")
+fun Profile(navController: NavHostController) {
+    Text(text="Settings页暂无内容")
 }

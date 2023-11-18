@@ -1,4 +1,4 @@
-package com.sioux.anthony.androidapp
+package com.sioux.anthony.androidapp.homepage
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
