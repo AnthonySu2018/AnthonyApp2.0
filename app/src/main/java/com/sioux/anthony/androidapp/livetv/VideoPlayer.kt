@@ -1,4 +1,4 @@
-package com.sioux.anthony.androidapp
+package com.sioux.anthony.androidapp.livetv
 
 import android.net.Uri
 import androidx.compose.foundation.layout.fillMaxSize
