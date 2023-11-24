@@ -35,22 +35,31 @@ import com.google.android.exoplayer2.ui.PlayerView
 @Composable
 fun LiveTV(navController: NavHostController) {
 
+    var room by remember {
+        mutableStateOf("")
+    }
+
+
     Column(){
-        Row(Modifier.weight(1F)){
-            MultiFunctionHall()
+        Column(Modifier.weight(1F)){
+
+            if (room == "MultiFunctionHall"){ MultiFunctionHall()}
+            else if (room == "LargeClass"){ }
+            else if (room == "MiddleClass"){ }
+            Text(text = "请选择要观看的空间")
         }
         Row(
             Modifier.align(Alignment.CenterHorizontally)
         ){
-            Button(onClick = { /*TODO*/ }) {
+            Button(onClick = { room = "LargeClass"}) {
                 Text(text ="19F大教室")
             }
             Spacer(Modifier.padding(10.dp))
-            Button(onClick = { /*TODO*/ }) {
+            Button(onClick = { room = "MultiFunctionHall" }) {
                 Text(text ="多功能厅")
             }
             Spacer(Modifier.padding(10.dp))
-            Button(onClick = { /*TODO*/ }) {
+            Button(onClick = { room = "MiddleClass" }) {
                 Text(text ="18F中教室")
             }
 
