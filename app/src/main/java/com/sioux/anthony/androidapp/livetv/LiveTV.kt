@@ -38,29 +38,28 @@ fun LiveTV(navController: NavHostController) {
 
 
     Column(){
-        Column(Modifier.weight(1F)){
+        Column(){
 
-            if (room == "MultiFunctionHall"){ MultiFunctionHall()}
-            else if (room == "LargeClass"){ }
-            else if (room == "MiddleClass"){ }
-            Text(text = "请选择要观看的空间")
-        }
-        Row(
-            Modifier.align(Alignment.CenterHorizontally)
-        ){
-            Button(onClick = { room = "LargeClass"}) {
-                Text(text ="19F大教室")
-            }
-            Spacer(Modifier.padding(10.dp))
-            Button(onClick = { room = "MultiFunctionHall" }) {
-                Text(text ="多功能厅")
-            }
-            Spacer(Modifier.padding(10.dp))
-            Button(onClick = { room = "MiddleClass" }) {
-                Text(text ="18F中教室")
-            }
+            if(room == ""){ Text(text = "请选择要观看的空间",Modifier.weight(1F))}
+            else if (room == "MultiFunctionHall"){ LiveCamera("http://192.168.1.200:8080/stream.mp4")}
+            else if (room == "LargeClass"){LiveCamera("http://192.168.1.200:8080/stream.mp4") }
+            else if (room == "MiddleClass"){LiveCamera("http://192.168.1.200:8080/stream.mp4") }
 
-
+            Row(
+                Modifier.align(Alignment.CenterHorizontally)
+            ){
+                Button(onClick = { room = "LargeClass"}) {
+                    Text(text ="19F大教室")
+                }
+                Spacer(Modifier.padding(10.dp))
+                Button(onClick = { room = "MultiFunctionHall" }) {
+                    Text(text ="多功能厅")
+                }
+                Spacer(Modifier.padding(10.dp))
+                Button(onClick = { room = "MiddleClass" }) {
+                    Text(text ="18F中教室")
+                }
+            }
         }
     }
 
@@ -72,8 +71,8 @@ fun LiveTV(navController: NavHostController) {
 
 
 @Composable
-fun MultiFunctionHall(){
-    val url = "http://10.19.51.168/0.mp4"
+fun LiveCamera(url:String){
+
     val context = LocalContext.current
     var playWhenReady by remember { mutableStateOf(true)}
     val exoPlayer = remember {
@@ -91,7 +90,7 @@ fun MultiFunctionHall(){
             factory = {
                 PlayerView(context).apply {
                     player = exoPlayer
-                    useController = false
+                    useController = true
                     FrameLayout.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT
