@@ -2,6 +2,7 @@ package com.sioux.anthony.androidapp.livetv
 
 
 
+import android.content.Intent
 import android.view.ViewGroup
 import android.widget.FrameLayout
 
@@ -28,12 +29,13 @@ import androidx.navigation.NavHostController
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.ui.PlayerView
+import com.sioux.anthony.androidapp.SecondActivity
 
 @Composable
 fun LiveTV(navController: NavHostController) {
 
     var room by remember { mutableStateOf("") }
-    var url  by remember { mutableStateOf("") }
+    var url  by remember { mutableStateOf("http://192.168.1.200:8080/stream.mp4") }
 
     Column(){
         Column(Modifier.weight(1F)){
@@ -68,11 +70,7 @@ fun LiveTV(navController: NavHostController) {
                     Text(text ="中教室")
                 }
                 Spacer(Modifier.padding(10.dp))
-                Button(onClick = {
-
-                }) {
-                    Text(text ="全屏")
-                }
+                ToSecond(url)
             }
 
     }
@@ -81,7 +79,21 @@ fun LiveTV(navController: NavHostController) {
 
 }
 
+@Composable
+fun ToSecond(url:String){
+    val mContext = LocalContext.current
 
+    Button(onClick = {
+
+        mContext.startActivity(Intent(mContext, SecondActivity::class.java).apply{
+            putExtra("url",url)
+
+        })
+    }) {
+        Text(text ="全屏")
+
+    }
+}
 
 
 @Composable
