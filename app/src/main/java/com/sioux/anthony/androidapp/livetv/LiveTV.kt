@@ -32,35 +32,49 @@ import com.google.android.exoplayer2.ui.PlayerView
 @Composable
 fun LiveTV(navController: NavHostController) {
 
-    var room by remember {
-        mutableStateOf("")
-    }
-
+    var room by remember { mutableStateOf("") }
+    var url  by remember { mutableStateOf("") }
 
     Column(){
-        Column(){
+        Column(Modifier.weight(1F)){
 
-            if(room == ""){ Text(text = "请选择要观看的空间",Modifier.weight(1F))}
+            if(room == ""){ Text(text = "请选择要观看的空间")}
             else if (room == "MultiFunctionHall"){ LiveCamera("http://192.168.1.200:8080/stream.mp4")}
             else if (room == "LargeClass"){LiveCamera("http://192.168.1.200:8080/stream.mp4") }
             else if (room == "MiddleClass"){LiveCamera("http://192.168.1.200:8080/stream.mp4") }
-
+        }
             Row(
                 Modifier.align(Alignment.CenterHorizontally)
             ){
-                Button(onClick = { room = "LargeClass"}) {
-                    Text(text ="19F大教室")
+                Spacer(Modifier.padding(1.dp))
+                Button(onClick = {
+                    room = "LargeClass"
+                    url = "http://192.168.1.200:8080/stream.mp4"
+                }) {
+                    Text(text ="大教室")
                 }
-                Spacer(Modifier.padding(10.dp))
-                Button(onClick = { room = "MultiFunctionHall" }) {
+                Spacer(Modifier.padding(1.dp))
+                Button(onClick = {
+                    room = "MultiFunctionHall"
+                    url = "http://192.168.1.200:8080/stream.mp4"
+                }) {
                     Text(text ="多功能厅")
                 }
+                Spacer(Modifier.padding(1.dp))
+                Button(onClick = {
+                    room = "MiddleClass"
+                    url = "http://192.168.1.200:8080/stream.mp4"
+                }) {
+                    Text(text ="中教室")
+                }
                 Spacer(Modifier.padding(10.dp))
-                Button(onClick = { room = "MiddleClass" }) {
-                    Text(text ="18F中教室")
+                Button(onClick = {
+
+                }) {
+                    Text(text ="全屏")
                 }
             }
-        }
+
     }
 
 
