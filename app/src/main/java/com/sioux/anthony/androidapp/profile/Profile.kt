@@ -18,11 +18,6 @@ fun Profile(navController: NavHostController) {
 
 @Composable
 fun Loginpageview(){
-    AndroidView(factory = { context ->
-        WebView(context).apply {
-            settings.javaScriptEnabled = true
-            webViewClient = WebViewClient()
-            loadUrl("https://m.igbacenter.com/activity/saishi/type_id/186.html")
-        }
-    },modifier = Modifier.fillMaxWidth())
+
+    Text(text="暂未开发，无需登录")
 }

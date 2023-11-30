@@ -18,11 +18,7 @@ fun Homepage(navController: NavHostController) {
 
 @Composable
 fun Homepageview(){
-    AndroidView(factory = { context ->
-        WebView(context).apply {
-            settings.javaScriptEnabled = true
-            webViewClient = WebViewClient()
-            loadUrl("https://www.igbacenter.com")
-        }
-    },modifier = Modifier.fillMaxWidth())
+
+    Text(text="Homepage暂未开发")
+
 }

@@ -5,8 +5,10 @@ import com.sioux.anthony.androidapp.R
 
 sealed class Screen(val route: String, @StringRes val resourceId: Int) {
     object Homepage : Screen("Homepage", R.string.Homepage)
-    object LiveTV : Screen("LiveTV", R.string.LiveTV)
     object Calendar : Screen("Calendar", R.string.Calendar)
+
+    object LiveTV : Screen("LiveTV", R.string.LiveTV)
+    object Ticket : Screen("Ticket", R.string.Ticket)
     object Profile : Screen("Profile", R.string.Profile)
 
 

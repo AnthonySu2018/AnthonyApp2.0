@@ -8,6 +8,7 @@ import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
@@ -30,6 +31,7 @@ import com.sioux.anthony.androidapp.calendar.Calendar
 import com.sioux.anthony.androidapp.homepage.Homepage
 import com.sioux.anthony.androidapp.profile.Profile
 import com.sioux.anthony.androidapp.route.Screen
+import com.sioux.anthony.androidapp.ticket.Ticket
 import com.sioux.anthony.androidapp.ui.theme.AndroidAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -41,8 +43,9 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 val items = listOf(
                     Screen.Homepage,
-                    Screen.LiveTV,
                     Screen.Calendar,
+                    Screen.LiveTV,
+                    Screen.Ticket,
                     Screen.Profile,
                 )
 
@@ -61,6 +64,7 @@ class MainActivity : ComponentActivity() {
                                             Screen.LiveTV   -> Icons.Filled.PlayArrow
                                             Screen.Calendar  -> Icons.Filled.CalendarMonth
                                             Screen.Profile -> Icons.Filled.AccountCircle
+                                            Screen.Ticket -> Icons.Filled.Build
                                             else -> Icons.Filled.Favorite
                                         },
 
@@ -92,6 +96,7 @@ class MainActivity : ComponentActivity() {
                         composable(Screen.Homepage.route) {  Homepage(navController) }
                         composable(Screen.LiveTV.route) { LiveTV(navController) }
                         composable(Screen.Calendar.route) {  Calendar(navController) }
+                        composable(Screen.Ticket.route){  Ticket(navController) }
                         composable(Screen.Profile.route) { Profile(navController) }
 
                     }
