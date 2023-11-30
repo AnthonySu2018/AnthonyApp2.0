@@ -29,7 +29,7 @@ import androidx.navigation.NavHostController
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.ui.PlayerView
-import com.sioux.anthony.androidapp.SecondActivity2
+import com.sioux.anthony.androidapp.SecondActivity3
 
 @Composable
 fun LiveTV(navController: NavHostController) {
@@ -85,7 +85,7 @@ fun ToSecond(url:String){
 
     Button(onClick = {
 
-        mContext.startActivity(Intent(mContext, SecondActivity2::class.java).apply{
+        mContext.startActivity(Intent(mContext, SecondActivity3::class.java).apply{
             putExtra("url",url)
 
         })
@@ -96,38 +96,6 @@ fun ToSecond(url:String){
 }
 
 
-@Composable
-fun LiveCamera(url:String){
 
-    val context = LocalContext.current
-    var playWhenReady by remember { mutableStateOf(true)}
-    val exoPlayer = remember {
-        ExoPlayer.Builder(context).build().apply {
-            setMediaItem(MediaItem.fromUri(url))
-            repeatMode = ExoPlayer.REPEAT_MODE_ALL
-            playWhenReady = playWhenReady
-            prepare()
-            play()
-        }
-    }
-    DisposableEffect(
-        AndroidView(
-            modifier = Modifier.fillMaxSize(),
-            factory = {
-                PlayerView(context).apply {
-                    player = exoPlayer
-                    useController = true
-                    FrameLayout.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT
-                    )
-                }
-            }
-        )
-    ) {
-        onDispose {
-            exoPlayer.release()
-        }
-    }
 
-}
+
