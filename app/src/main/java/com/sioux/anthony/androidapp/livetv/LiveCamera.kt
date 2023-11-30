@@ -8,6 +8,7 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -21,11 +22,12 @@ fun LiveCamera(url:String) {
 
     val context = LocalContext.current
     var playWhenReady by remember { mutableStateOf(true) }
-    val exoPlayer = remember {
+    val exoPlayer = remember{
         ExoPlayer.Builder(context).build().apply {
             setMediaItem(MediaItem.fromUri(url))
             repeatMode = ExoPlayer.REPEAT_MODE_ALL
             playWhenReady = playWhenReady
+
             prepare()
             play()
         }
@@ -37,6 +39,7 @@ fun LiveCamera(url:String) {
                 PlayerView(context).apply {
                     player = exoPlayer
                     useController = true
+
                     FrameLayout.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT
