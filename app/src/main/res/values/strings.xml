@@ -6,4 +6,5 @@
     <string name="Profile">我的</string>
     <string name="title_activity_second3">SecondActivity3</string>
     <string name="Ticket">工单</string>
+    <string name="Map">地图</string>
 </resources>
