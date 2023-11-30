@@ -83,5 +83,6 @@ dependencies {
 
     implementation ("com.google.android.exoplayer:exoplayer:2.16.1")
 
+    implementation ("com.google.android.exoplayer:exoplayer:2.8.4")
 
 }

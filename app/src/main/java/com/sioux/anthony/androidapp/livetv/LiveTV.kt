@@ -29,7 +29,7 @@ import androidx.navigation.NavHostController
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.ui.PlayerView
-import com.sioux.anthony.androidapp.SecondActivity
+import com.sioux.anthony.androidapp.SecondActivity2
 
 @Composable
 fun LiveTV(navController: NavHostController) {
@@ -85,7 +85,7 @@ fun ToSecond(url:String){
 
     Button(onClick = {
 
-        mContext.startActivity(Intent(mContext, SecondActivity::class.java).apply{
+        mContext.startActivity(Intent(mContext, SecondActivity2::class.java).apply{
             putExtra("url",url)
 
         })

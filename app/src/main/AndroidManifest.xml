@@ -15,11 +15,12 @@
         android:theme="@style/Theme.AndroidApp"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
         <activity
-            android:name=".SecondActivity"
-            android:theme="@style/Theme.AppCompat"
+            android:name=".SecondActivity2"
+            android:exported="false"
             android:screenOrientation="landscape"
-            android:exported="false" />
+            android:theme="@style/Theme.AppCompat" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
