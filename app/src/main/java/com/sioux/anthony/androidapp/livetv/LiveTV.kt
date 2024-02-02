@@ -48,10 +48,7 @@ fun LiveTV(navController: NavHostController) {
     Column(){
             Column(Modifier.weight(1F)){
 
-                //if(room == ""){ Text(text = "请选择要观看的空间")}
-                //else if (room == "MultiFunctionHall"){ LiveCamera(url)}
-                //else if (room == "LargeClass"){LiveCamera(url) }
-                //else if (room == "MiddleClass"){LiveCamera(url) }
+
                 Column(Modifier.weight(1F)){
                     Text(text="大教室")
                     LiveCamera("http://10.19.50.101:8080/stream.mp4")

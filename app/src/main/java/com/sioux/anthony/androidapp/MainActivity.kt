@@ -7,12 +7,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.Build
-import androidx.compose.material.icons.filled.CalendarMonth
-import androidx.compose.material.icons.filled.Favorite
+
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Map
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -27,13 +23,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.sioux.anthony.androidapp.livetv.LiveTV
-import com.sioux.anthony.androidapp.calendar.Calendar
 import com.sioux.anthony.androidapp.homepage.Homepage
-import com.sioux.anthony.androidapp.map.Map
-import com.sioux.anthony.androidapp.profile.Profile
+import com.sioux.anthony.androidapp.livetv.LiveTV
 import com.sioux.anthony.androidapp.route.Screen
-import com.sioux.anthony.androidapp.ticket.Ticket
 import com.sioux.anthony.androidapp.ui.theme.AndroidAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -45,11 +37,9 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 val items = listOf(
                     Screen.Homepage,
-                    Screen.Calendar,
+
                     Screen.LiveTV,
-                    Screen.Map,
-                    //Screen.Ticket,
-                    Screen.Profile,
+
                 )
 
                 Scaffold(
@@ -65,11 +55,6 @@ class MainActivity : ComponentActivity() {
                                         Icon(when(it){
                                             Screen.Homepage -> Icons.Filled.Home
                                             Screen.LiveTV   -> Icons.Filled.PlayArrow
-                                            Screen.Calendar  -> Icons.Filled.CalendarMonth
-                                            Screen.Profile -> Icons.Filled.AccountCircle
-                                            Screen.Map -> Icons.Filled.Map
-                                            //Screen.Ticket -> Icons.Filled.Build
-                                            else -> Icons.Filled.Favorite
                                         },
 
                                             contentDescription = null) },
@@ -99,10 +84,6 @@ class MainActivity : ComponentActivity() {
                     NavHost(navController, startDestination = Screen.Homepage.route, Modifier.padding(innerPadding)) {
                         composable(Screen.Homepage.route) {  Homepage(navController) }
                         composable(Screen.LiveTV.route) { LiveTV(navController) }
-                        composable(Screen.Calendar.route) {  Calendar(navController) }
-                        composable(Screen.Map.route) {  Map(navController) }
-                        //composable(Screen.Ticket.route){  Ticket(navController) }
-                        composable(Screen.Profile.route) { Profile(navController) }
 
                     }
                 }
