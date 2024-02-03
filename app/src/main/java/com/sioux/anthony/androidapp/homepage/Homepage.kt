@@ -25,12 +25,12 @@ import androidx.navigation.NavHostController
 
 @Composable
 fun Homepage(navController: NavHostController) {
-    Homepageview()
+    HomePageView()
 }
 
 
 @Composable
-fun Homepageview() {
+fun HomePageView() {
 
     //val prefaceIp by remember { mutableStateOf("") }
 
@@ -41,7 +41,7 @@ fun Homepageview() {
                     Spacer(Modifier.padding(1.dp))
                     Button(onClick = {
                         Log.i("button", "序厅视频1button被点击")
-                        sendUDP(ipAddress = "172.18.0.33", port = 50505, action = "172.18.0.33K0101END")
+                        sendUDP(remoteHost = "172.18.0.33", remotePort = 50505, action = "172.18.0.33K0101END")
                     }) { Text(text = "视频1") }
 
                     Spacer(Modifier.padding(1.dp))

@@ -67,6 +67,7 @@ dependencies {
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    implementation("androidx.core:core-ktx:+")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -86,5 +87,7 @@ dependencies {
     implementation ("com.google.android.exoplayer:exoplayer:2.16.1")
 
     implementation ("com.google.android.exoplayer:exoplayer:2.8.4")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:0.27.0-eap13")
+
 
 }
