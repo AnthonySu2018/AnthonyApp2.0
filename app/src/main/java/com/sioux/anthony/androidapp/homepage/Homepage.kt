@@ -73,13 +73,21 @@ fun Homepageview() {
             Text(text = "历史墙投影仪", fontSize = 20.sp)
             Row(){
 
-
-
+                Spacer(Modifier.padding(1.dp))
+                Button(onClick = {
+                    Log.i("button", "历史墙投影仪 视频 button被点击")
+                    sendUDP(remoteHost = "172.18.0.11", remotePort = 50505, action = "172.18.0.11K0101END")
+                    Toast.makeText(context,"历史墙投影仪 视频 button被点击",Toast.LENGTH_SHORT).show()
+                }) { Text(text = "视频") }
 
                 Spacer(Modifier.padding(1.dp))
-                Button(onClick = { Log.i("button", "历史墙投影仪视频1button被点击") }) { Text(text = "视频1") }
-                Spacer(Modifier.padding(1.dp))
-                Button(onClick = { Log.i("button", "历史墙投影仪停止button被点击") }) { Text(text = "停止") }
+                Button(onClick = {
+                    Log.i("button", "历史墙投影仪 停止 button被点击")
+                    sendUDP(remoteHost = "172.18.0.11", remotePort = 50505, action = "172.18.0.11STOPPEND")
+                    Toast.makeText(context,"历史墙投影仪 停止 button被点击",Toast.LENGTH_SHORT).show()
+                }) { Text(text = "停止") }
+
+
             }
         }
 
@@ -87,10 +95,23 @@ fun Homepageview() {
         Column(Modifier.weight(1F)){
             Text(text = "IntelVision", fontSize = 20.sp)
             Row(){
+
                 Spacer(Modifier.padding(1.dp))
-                Button(onClick = { Log.i("button", "IntelVision视频1button被点击") }) { Text(text = "视频1") }
+                Button(onClick = {
+                    Log.i("button", "IntelVision 视频 button被点击")
+                    sendUDP(remoteHost = "172.18.0.34", remotePort = 50505, action = "172.18.0.34K0101K0101END")
+                    Toast.makeText(context,"IntelVision 视频 button被点击",Toast.LENGTH_SHORT).show()
+                }) { Text(text = "视频") }
+
                 Spacer(Modifier.padding(1.dp))
-                Button(onClick = { Log.i("button", "IntelVision停止button被点击") }) { Text(text = "停止") }
+                Button(onClick = {
+                    Log.i("button", "IntelVision 视频 button被点击")
+                    sendUDP(remoteHost = "172.18.0.34", remotePort = 50505, action = "172.18.0.34STOPPEND")
+                    Toast.makeText(context,"IntelVision 视频 button被点击",Toast.LENGTH_SHORT).show()
+                }) { Text(text = "停止") }
+
+
+
             }
         }
 
