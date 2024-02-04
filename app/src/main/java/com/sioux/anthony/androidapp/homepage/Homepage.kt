@@ -39,65 +39,59 @@ fun Homepageview() {
     Column(){
         val context = LocalContext.current
         Column(Modifier.weight(1F)){
-                Text(text = "Author：Anthony, Date:2024-02-04, Version:1.0.0", fontSize = 10.sp)
-                Text(text = "序厅LED大屏", fontSize = 30.sp)
-                Row(){
+            Text(text = "Author：Anthony, Date:2024-02-04, Version:1.0.0", fontSize = 10.sp)
+            Text(text = "序厅LED大屏", fontSize = 20.sp)
+            Row(){
 
-                    Spacer(Modifier.padding(1.dp))
-                    Button(onClick = {
-                        Log.i("button", "序厅 视频1 button被点击")
-                        sendUDP(ipAddress = "172.18.0.33", port = 50505, action = "172.18.0.33K0101END")
-                        Toast.makeText(context,"序厅 视频1 button被点击",Toast.LENGTH_SHORT).show()
-                    }) { Text(text = "视频") }
-
-
-                    Spacer(Modifier.padding(1.dp))
-                    Button(onClick = {
-                        Log.i("button", "序厅 停止 button被点击")
-                        sendUDP(ipAddress = "172.18.0.33", port = 50505, action = "172.18.0.33STOPPEND")
-                        Toast.makeText(context,"序厅 停止 button被点击",Toast.LENGTH_SHORT).show()
-                    }) { Text(text = "停止") }
-
-                    Spacer(Modifier.padding(1.dp))
-                    Button(onClick = {
-                        Log.i("button", "序厅 拍照模式 button被点击")
-                        sendUDP(ipAddress = "172.18.0.33", port = 50505, action = "172.18.0.33B0601END")
-                        Toast.makeText(context,"序厅 拍照模式 button被点击",Toast.LENGTH_SHORT).show()
-                    }) { Text(text = "拍照") }
-
-                    Spacer(Modifier.padding(1.dp))
-                    Button(onClick = {
-                        Log.i("button", "序厅 拍照灯关闭 button被点击")
-                        sendUDP(ipAddress = "172.18.0.33", port = 50505, action = "172.18.0.33B0501END")
-                        Toast.makeText(context,"序厅 拍照灯关闭 button被点击",Toast.LENGTH_LONG).show()
-                    }) { Text(text = "灯关") }
+                Spacer(Modifier.padding(1.dp))
+                Button(onClick = {
+                    Log.i("button", "序厅 视频1 button被点击")
+                    sendUDP(remoteHost = "172.18.0.33", remotePort = 50505, action = "172.18.0.33K0101END")
+                    Toast.makeText(context,"序厅 视频1 button被点击",Toast.LENGTH_SHORT).show()
+                }) { Text(text = "视频") }
 
 
+                Spacer(Modifier.padding(1.dp))
+                Button(onClick = {
+                    Log.i("button", "序厅 停止 button被点击")
+                    sendUDP(remoteHost = "172.18.0.33", remotePort = 50505, action = "172.18.0.33STOPPEND")
+                    Toast.makeText(context,"序厅 停止 button被点击",Toast.LENGTH_SHORT).show()
+                }) { Text(text = "停止") }
 
+                Spacer(Modifier.padding(1.dp))
+                Button(onClick = {
+                    Log.i("button", "序厅 拍照模式 button被点击")
+                    sendUDP(remoteHost = "172.18.0.33", remotePort = 50505, action = "172.18.0.33B0601END")
+                    Toast.makeText(context,"序厅 拍照模式 button被点击",Toast.LENGTH_SHORT).show()
+                }) { Text(text = "拍照") }
 
-                }
+            }
         }
 
 
         Column(Modifier.weight(1F)){
-                Text(text = "历史墙投影仪", fontSize = 30.sp)
-                Row(){
-                    Spacer(Modifier.padding(1.dp))
-                    Button(onClick = { Log.i("button", "历史墙投影仪视频1button被点击") }) { Text(text = "视频1") }
-                    Spacer(Modifier.padding(1.dp))
-                    Button(onClick = { Log.i("button", "历史墙投影仪停止button被点击") }) { Text(text = "停止") }
-                }
+            Text(text = "历史墙投影仪", fontSize = 20.sp)
+            Row(){
+
+
+
+
+                Spacer(Modifier.padding(1.dp))
+                Button(onClick = { Log.i("button", "历史墙投影仪视频1button被点击") }) { Text(text = "视频1") }
+                Spacer(Modifier.padding(1.dp))
+                Button(onClick = { Log.i("button", "历史墙投影仪停止button被点击") }) { Text(text = "停止") }
             }
+        }
 
 
         Column(Modifier.weight(1F)){
-                Text(text = "IntelVision", fontSize = 30.sp)
-                Row(){
-                    Spacer(Modifier.padding(1.dp))
-                    Button(onClick = { Log.i("button", "IntelVision视频1button被点击") }) { Text(text = "视频1") }
-                    Spacer(Modifier.padding(1.dp))
-                    Button(onClick = { Log.i("button", "IntelVision停止button被点击") }) { Text(text = "停止") }
-                }
+            Text(text = "IntelVision", fontSize = 20.sp)
+            Row(){
+                Spacer(Modifier.padding(1.dp))
+                Button(onClick = { Log.i("button", "IntelVision视频1button被点击") }) { Text(text = "视频1") }
+                Spacer(Modifier.padding(1.dp))
+                Button(onClick = { Log.i("button", "IntelVision停止button被点击") }) { Text(text = "停止") }
+            }
         }
 
     }
