@@ -3,6 +3,7 @@ package com.sioux.anthony.androidapp.homepage
 import android.util.Log
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -17,6 +18,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -35,21 +37,44 @@ fun Homepageview() {
     //val prefaceIp by remember { mutableStateOf("") }
 
     Column(){
+        val context = LocalContext.current
         Column(Modifier.weight(1F)){
+                Text(text = "Author：Anthony, Date:2024-02-04, Version:1.0.0", fontSize = 10.sp)
                 Text(text = "序厅LED大屏", fontSize = 30.sp)
                 Row(){
-                    Spacer(Modifier.padding(1.dp))
-                    Button(onClick = {
-                        Log.i("button", "序厅视频1button被点击")
-                        sendUDP(ipAddress = "172.18.0.33", port = 50505, action = "172.18.0.33K0101END")
-                    }) { Text(text = "视频1") }
 
                     Spacer(Modifier.padding(1.dp))
-                    Button(onClick = { Log.i("button", "序厅停止button被点击") }) { Text(text = "停止") }
+                    Button(onClick = {
+                        Log.i("button", "序厅 视频1 button被点击")
+                        sendUDP(ipAddress = "172.18.0.33", port = 50505, action = "172.18.0.33K0101END")
+                        Toast.makeText(context,"序厅 视频1 button被点击",Toast.LENGTH_SHORT).show()
+                    }) { Text(text = "视频") }
+
+
                     Spacer(Modifier.padding(1.dp))
-                    Button(onClick = { Log.i("button", "序厅停止button被点击") }) { Text(text = "拍照模式") }
+                    Button(onClick = {
+                        Log.i("button", "序厅 停止 button被点击")
+                        sendUDP(ipAddress = "172.18.0.33", port = 50505, action = "172.18.0.33STOPPEND")
+                        Toast.makeText(context,"序厅 停止 button被点击",Toast.LENGTH_SHORT).show()
+                    }) { Text(text = "停止") }
+
                     Spacer(Modifier.padding(1.dp))
-                    Button(onClick = { Log.i("button", "序厅停止button被点击") }) { Text(text = "拍照灯关闭") }
+                    Button(onClick = {
+                        Log.i("button", "序厅 拍照模式 button被点击")
+                        sendUDP(ipAddress = "172.18.0.33", port = 50505, action = "172.18.0.33B0601END")
+                        Toast.makeText(context,"序厅 拍照模式 button被点击",Toast.LENGTH_SHORT).show()
+                    }) { Text(text = "拍照") }
+
+                    Spacer(Modifier.padding(1.dp))
+                    Button(onClick = {
+                        Log.i("button", "序厅 拍照灯关闭 button被点击")
+                        sendUDP(ipAddress = "172.18.0.33", port = 50505, action = "172.18.0.33B0501END")
+                        Toast.makeText(context,"序厅 拍照灯关闭 button被点击",Toast.LENGTH_LONG).show()
+                    }) { Text(text = "灯关") }
+
+
+
+
                 }
         }
 
