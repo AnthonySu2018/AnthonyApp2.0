@@ -27,11 +27,6 @@ fun sendUDP(remoteHost:String,remotePort:Int,action:String){
     Log.d("button", stringBuilder.toString())
 
 
-
-
-
-
-
     try {
 
         runBlocking {

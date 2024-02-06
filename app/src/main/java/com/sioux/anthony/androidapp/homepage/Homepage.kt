@@ -115,6 +115,30 @@ fun Homepageview() {
             }
         }
 
+
+        Column(Modifier.weight(1F)){
+            Text(text = "PCbooth", fontSize = 20.sp)
+            Row(){
+
+                Spacer(Modifier.padding(1.dp))
+                Button(onClick = {
+                    Log.i("button", "PCbooth 重启 button被点击")
+                    sendGet(remoteHost = "172.18.1.56", remotePort = 50000, action = "reboot")
+                    Toast.makeText(context,"PCbooth 重启 button被点击",Toast.LENGTH_SHORT).show()
+                }) { Text(text = "重启") }
+
+                Spacer(Modifier.padding(1.dp))
+                Button(onClick = {
+                    Log.i("button", "PCbooth 关机 button被点击")
+                    sendGet(remoteHost = "172.18.1.56", remotePort = 50000, action = "shutdown")
+                    Toast.makeText(context,"PCbooth 关机 button被点击",Toast.LENGTH_SHORT).show()
+                }) { Text(text = "关机") }
+
+
+
+            }
+        }
+
     }
 
 
