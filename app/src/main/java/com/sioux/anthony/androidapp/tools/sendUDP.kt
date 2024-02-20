@@ -32,15 +32,8 @@ fun sendUDP(remoteHost:String,remotePort:Int,action:String){
 
                 socket.send(outputPacket)
                 Log.d("button", "数据已发送")
-
-
             }
-
-
         }
-
-
-
 
     } catch (_:IOException){
     }finally{

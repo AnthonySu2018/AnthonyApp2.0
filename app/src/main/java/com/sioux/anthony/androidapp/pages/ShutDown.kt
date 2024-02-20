@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.sioux.anthony.androidapp.tools.shutDownAllDevices
 
 @Composable
 fun ShutDown(navController: NavHostController) {
@@ -32,7 +33,7 @@ fun ShutDownView(){
     ){
         Button(onClick = {
             Log.i("button", "一键关闭所有设备按钮被点击")
-
+            shutDownAllDevices()
             Toast.makeText(context,"一键关闭所有设备按钮被点击", Toast.LENGTH_SHORT).show()
         }) { Text(text = "一键关闭所有设备",fontSize = 40.sp) }
 

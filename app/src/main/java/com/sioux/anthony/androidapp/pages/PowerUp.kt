@@ -16,6 +16,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.sp
 
 import androidx.compose.ui.Alignment
+import com.sioux.anthony.androidapp.tools.powerUpAllDevices
 
 
 @Composable
@@ -34,7 +35,7 @@ fun PowerUpView(){
     ){
         Button(onClick = {
             Log.i("button", "一键开启所有设备按钮被点击")
-
+            powerUpAllDevices()
             Toast.makeText(context,"一键开启所有设备按钮被点击", Toast.LENGTH_SHORT).show()
         }) { Text(text = "一键开启所有设备",fontSize = 40.sp) }
 
