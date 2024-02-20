@@ -22,10 +22,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.sioux.anthony.androidapp.homepage.Homepage
-import com.sioux.anthony.androidapp.homepage.PowerUp
-import com.sioux.anthony.androidapp.homepage.Settings
-import com.sioux.anthony.androidapp.homepage.ShutDown
+import com.sioux.anthony.androidapp.pages.Homepage
+import com.sioux.anthony.androidapp.pages.PowerUp
+import com.sioux.anthony.androidapp.pages.Settings
+import com.sioux.anthony.androidapp.pages.ShutDown
 import com.sioux.anthony.androidapp.livetv.LiveTV
 import com.sioux.anthony.androidapp.route.Screen
 import com.sioux.anthony.androidapp.ui.theme.AndroidAppTheme

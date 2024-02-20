@@ -1,7 +1,6 @@
-package com.sioux.anthony.androidapp.homepage
+package com.sioux.anthony.androidapp.pages
 
 import android.util.Log
-import android.view.Gravity
 import android.widget.Toast
 
 import androidx.compose.foundation.layout.Box

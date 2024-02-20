@@ -1,4 +1,4 @@
-package com.sioux.anthony.androidapp.homepage
+package com.sioux.anthony.androidapp.pages
 
 
 import android.util.Log
