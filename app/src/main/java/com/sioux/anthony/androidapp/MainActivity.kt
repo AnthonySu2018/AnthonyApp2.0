@@ -7,9 +7,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
 
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
@@ -24,6 +23,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.sioux.anthony.androidapp.homepage.Homepage
+import com.sioux.anthony.androidapp.homepage.PowerUp
+import com.sioux.anthony.androidapp.homepage.Settings
+import com.sioux.anthony.androidapp.homepage.ShutDown
 import com.sioux.anthony.androidapp.livetv.LiveTV
 import com.sioux.anthony.androidapp.route.Screen
 import com.sioux.anthony.androidapp.ui.theme.AndroidAppTheme
@@ -37,9 +39,10 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 val items = listOf(
                     Screen.Homepage,
-
+                    Screen.PowerUp,
                     Screen.LiveTV,
-
+                    Screen.ShutDown,
+                    Screen.Settings,
                 )
 
                 Scaffold(
@@ -54,7 +57,10 @@ class MainActivity : ComponentActivity() {
                                     icon = {
                                         Icon(when(it){
                                             Screen.Homepage -> Icons.Filled.Home
+                                            Screen.PowerUp -> Icons.Filled.Power
                                             Screen.LiveTV   -> Icons.Filled.PlayArrow
+                                            Screen.ShutDown -> Icons.Filled.PowerOff
+                                            Screen.Settings -> Icons.Filled.Settings
                                         },
 
                                             contentDescription = null) },
@@ -83,8 +89,10 @@ class MainActivity : ComponentActivity() {
                 ) { innerPadding ->
                     NavHost(navController, startDestination = Screen.Homepage.route, Modifier.padding(innerPadding)) {
                         composable(Screen.Homepage.route) {  Homepage(navController) }
+                        composable(Screen.PowerUp.route) {  PowerUp(navController) }
                         composable(Screen.LiveTV.route) { LiveTV(navController) }
-
+                        composable(Screen.ShutDown.route) {  ShutDown(navController) }
+                        composable(Screen.Settings.route) {  Settings(navController) }
                     }
                 }
 

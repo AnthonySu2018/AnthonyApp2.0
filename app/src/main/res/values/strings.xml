@@ -1,10 +1,15 @@
 <resources>
     <string name="app_name">LiveGBA</string>
     <string name="Homepage">主页</string>
+    <string name="PowerUp">开机</string>
     <string name="LiveTV">Live</string>
+    <string name="ShutDown">关机</string>
+    <string name="Settings">设置</string>
     <string name="Calendar">日程</string>
     <string name="Profile">我的</string>
     <string name="title_activity_second3">SecondActivity3</string>
     <string name="Ticket">工单</string>
     <string name="Map">地图</string>
+
+
 </resources>
