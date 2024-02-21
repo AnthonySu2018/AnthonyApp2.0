@@ -54,17 +54,23 @@ fun powerUpAllDevices() {
                 println("汽车 LED播放盒开")
                 sendUDP("172.18.0.36",50505,"172.18.0.36PWRONEND")
 
+
+
                 println("智慧教室Maxhub开")
                 sendTCPHEXStr("172.18.0.55",8000,"00")
+                Thread.sleep(100)
 
                 println("会议解决方案工控屏1开")
                 sendTCPHEXStr("172.18.0.61",8000,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
 
                 println("会议解决方案工控屏2开")
                 sendTCPHEXStr("172.18.0.62",8000,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
 
                 println("会议解决方案Maxhub开")
                 sendTCPHEXStr("172.18.0.62",8000,"00")
+                Thread.sleep(100)
 
                 println("智慧校园拼接屏开")
                 sendTCPHEXStr("172.18.0.69",20001,"D5 11 11 10 01 AA")
@@ -72,61 +78,71 @@ fun powerUpAllDevices() {
 
                 println("投影仪开")
                 sendTCPHEXStr("172.18.0.73",8000,"28 50 57 52 20 31 29")
+                Thread.sleep(100)
 
                 println("会议解决方案全场智能平板开")
                 sendTCPHEXStr("172.18.0.74",8000,"DD FF 00 07 C1 31 00 00 01 00 F6 BB CC")
-
-
+                Thread.sleep(100)
 
                 println("XFusion工控屏开")
                 sendTCPHEXStr("172.18.0.44",8000,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
+
+                println("Green PC工控屏开")
+                sendTCPHEXStr("172.18.0.45",8000,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
 
                 println("芯片产业链工控屏开")
                 sendTCPHEXStr("172.18.0.47",8000,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
 
                 println("Motherboard工控屏开")
                 sendTCPHEXStr("172.18.0.48",8000,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
 
                 println("显卡工控屏开")
                 sendTCPHEXStr("172.18.0.49",8000,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
 
-                /*
+                println("超能云终端工控屏开")
+                sendTCPHEXStr("172.18.0.51",8000,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
 
-                      println("")
-                    sendTCPHEXStr("",0,"")
+                println("会议解决方案工控屏1开")
+                sendTCPHEXStr("172.18.0.61",8000,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
 
-            149,XFusion工控屏关,0,172.18.0.44,8000,DD FF 00 08 C1 15 00 00 01 AA AA DD BB CC
-            153,芯片产业链工控屏关,0,172.18.0.47,8000,DD FF 00 08 C1 15 00 00 01 AA AA DD BB CC
-            155,Motherboard工控屏关,0,172.18.0.48,8000,DD FF 00 08 C1 15 00 00 01 AA AA DD BB CC
-            157,显卡工控屏关,0,172.18.0.49,8000,DD FF 00 08 C1 15 00 00 01 AA AA DD BB CC
+                println("会议解决方案工控屏2开")
+                sendTCPHEXStr("172.18.0.62",8000,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
 
-            162,超能云终端工控屏开,0,172.18.0.51,8000,DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC
-            163,超能云终端工控屏关,0,172.18.0.51,8000,DD FF 00 08 C1 15 00 00 01 AA AA DD BB CC
-            166,会议解决方案工控屏1开,0,172.18.0.61,8000,DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC
-            167,会议解决方案工控屏1关,0,172.18.0.61,8000,DD FF 00 08 C1 15 00 00 01 AA AA DD BB CC
-            168,会议解决方案工控屏2开,0,172.18.0.62,8000,DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC
-            169,会议解决方案工控屏2关,0,172.18.0.62,8000,DD FF 00 08 C1 15 00 00 01 AA AA DD BB CC
-            174,闸机工控屏开,0,172.18.0.53,8000,DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC
-            175,闸机工控屏关,0,172.18.0.53,8000,DD FF 00 08 C1 15 00 00 01 AA AA DD BB CC
-            176,智慧灯杆工控屏开,0,172.18.0.54,8000,DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC
-            177,智慧灯杆工控屏关,0,172.18.0.54,8000,DD FF 00 08 C1 15 00 00 01 AA AA DD BB CC
-            178,AI Box工控屏开,0,172.18.0.55,8000,DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC
-            179,AI Box工控屏关,0,172.18.0.55,8000,DD FF 00 08 C1 15 00 00 01 AA AA DD BB CC
-            184,缺陷检测工控屏开,0,172.18.0.56,8000,DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC
-            185,缺陷检测工控屏关,0,172.18.0.56,8000,DD FF 00 08 C1 15 00 00 01 AA AA DD BB CC
-            188,大族激光工控屏开,0,172.18.0.57,8000,DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC
-            189,大族激光工控屏关,0,172.18.0.57,8000,DD FF 00 08 C1 15 00 00 01 AA AA DD BB CC
-            190,飞拍工控屏开,0,172.18.0.58,8000,DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC
-            191,飞拍工控屏关,0,172.18.0.58,8000,DD FF 00 08 C1 15 00 00 01 AA AA DD BB CC
-            192,机械臂工控屏开,0,172.18.0.59,8000,DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC
-            193,机械臂工控屏关,0,172.18.0.59,8000,DD FF 00 08 C1 15 00 00 01 AA AA DD BB CC
-            200,Green PC工控屏开,0,172.18.0.45,8000,DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC
-            201,Green PC工控屏关,0,172.18.0.45,8000,DD FF 00 08 C1 15 00 00 01 AA AA DD BB CC
-                     */
+                println("闸机工控屏开")
+                sendTCPHEXStr("172.18.0.53",8000,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
 
+                println("智慧灯杆工控屏开")
+                sendTCPHEXStr("172.18.0.54",8000,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
 
+                println("AI Box工控屏开")
+                sendTCPHEXStr("172.18.0.55,8000",0,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
 
+                println("缺陷检测工控屏开")
+                sendTCPHEXStr("172.18.0.56",8000,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
 
+                println("大族激光工控屏开")
+                sendTCPHEXStr("172.18.0.57",8000,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
+
+                println("飞拍工控屏开")
+                sendTCPHEXStr("",0,"")
+                Thread.sleep(100)
+
+                println("机械臂工控屏开")
+                sendTCPHEXStr("172.18.0.59,8000",8000,"DD FF 00 08 C1 15 00 00 01 BB BB DD BB CC")
+                Thread.sleep(100)
 
 
 

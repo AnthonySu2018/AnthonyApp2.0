@@ -28,8 +28,7 @@ fun Settings(navController: NavHostController) {
 
 @Composable
 fun SettingsView(){
-    SwitchBlock("机房时序电源","sendTCPHEXStr","172.18.0.71",
-        40004,"55 01 A4 00 00 A5","55 01 A5 00 00 A4")
+    //SwitchBlock("机房时序电源","sendTCPHEXStr","172.18.0.71", 40004,"55 01 A4 00 00 A5","55 01 A5 00 00 A4")
 
 }
 
